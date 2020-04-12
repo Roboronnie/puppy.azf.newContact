@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puppy_AZF_NewContact", "Puppy_AZF_NewContact\Puppy_AZF_NewContact.csproj", "{C734C7BC-58C0-4852-9B3E-C485D7C7FD39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C734C7BC-58C0-4852-9B3E-C485D7C7FD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C734C7BC-58C0-4852-9B3E-C485D7C7FD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C734C7BC-58C0-4852-9B3E-C485D7C7FD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C734C7BC-58C0-4852-9B3E-C485D7C7FD39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
