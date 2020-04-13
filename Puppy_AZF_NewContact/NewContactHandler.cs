@@ -42,7 +42,11 @@ namespace Puppy_AZF_NewContact
                     MessageType = "NewContact",
                     Data = new
                     {
-
+                        FirstName = deserializedRequestBody.FirstName,
+                        LastName = deserializedRequestBody.LastName,
+                        // TODO
+                        // contact info count (items) "how many data points do we have on the contact"
+                        // cycle through and send items
                     }
                 };
 
