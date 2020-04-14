@@ -13,6 +13,10 @@ namespace Puppy_AZF_NewContact
 {
     public class NewContactHandler : IHandler
     {
+        const string ServiceBusConnectionString = "";
+        const string QueueName = "";
+        static IQueueClient queueClient;
+
         public NewContactHandler()
         {
         }
@@ -56,11 +60,11 @@ namespace Puppy_AZF_NewContact
                     SessionId = "sessionId"
                 };
 
-                var destinationTopic = "destinationTopic";
-                var connectionString = "connectionString";
-                ITopicClient topicClient = new TopicClient(connectionString, destinationTopic);
+                queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
 
-                await topicClient.SendAsync(message);
+                await queueClient.SendAsync(message);
+
+                await queueClient.CloseAsync();
             }
             catch
             {
