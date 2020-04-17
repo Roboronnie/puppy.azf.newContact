@@ -13,12 +13,11 @@ namespace Puppy_AZF_NewContact
 {
     public class NewContactHandler : IHandler
     {
-        const string ServiceBusConnectionString = "";
-        const string QueueName = "";
-        static IQueueClient queueClient;
+        public readonly IAzureServices _azureServices;
 
-        public NewContactHandler()
+        public NewContactHandler(IAzureServices azureServices)
         {
+            _azureServices = azureServices;
         }
 
         public async Task<IActionResult> ProcessHttpTriggerNewContactHandler(HttpRequest req, ILogger log)
@@ -60,11 +59,7 @@ namespace Puppy_AZF_NewContact
                     SessionId = "sessionId"
                 };
 
-                queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-                await queueClient.SendAsync(message);
-
-                await queueClient.CloseAsync();
+                await _azureServices.SendMessageAsync(message);
             }
             catch
             {
